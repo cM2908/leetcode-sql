@@ -1,2 +1,3 @@
 # leetcode-sql
-Leetcode SQL Solutions
+
+Leetcode SQL Question Solutions
