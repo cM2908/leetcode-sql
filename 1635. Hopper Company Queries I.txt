@@ -19,6 +19,22 @@ aggr_details AS (
 	SELECT num,COUNT(DISTINCT ride_id) AS rides
 	FROM ride_details
 	GROUP BY num
+),
+avail_drivers AS (
+	SELECT *,
+		ROW_NUMBER() OVER (ORDER BY join_date) AS drivers
+	FROM drivers_1635
+),
+drivers_2020 AS (
+	SELECT *
+	FROM months m
+	LEFT JOIN avail_drivers a ON EXTRACT(YEAR FROM a.join_date)=2020 AND m.num>=EXTRACT(MONTH FROM a.join_date)
+),
+driver_count AS (
+	SELECT num,MAX(drivers) AS drivers
+	FROM drivers_2020
+	GROUP BY num
 )
-SELECT num AS month,rides
-FROM aggr_details;
+SELECT a.num AS month,a.rides,d.drivers
+FROM aggr_details a
+INNER JOIN driver_count d ON a.num=d.num;
