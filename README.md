@@ -3,7 +3,7 @@
 Repository Contains:
 --------------------
 (1) 120+ Leetcode SQL Question Solutions
-(2) PostgreSQL Dump File
+(2) PostgreSQL Dump File (leetcodedb.sql)
 
 
 SQL Dump File of PostgreSQL will create all the required tables in your own PostgreSQL setup.
