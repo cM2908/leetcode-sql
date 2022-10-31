@@ -410,6 +410,20 @@ CREATE TABLE public.contacts_1364 (
 ALTER TABLE public.contacts_1364 OWNER TO postgres;
 
 --
+-- Name: contests_1811; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.contests_1811 (
+    contest_id integer,
+    gold_medal integer,
+    silver_medal integer,
+    bronz_medal integer
+);
+
+
+ALTER TABLE public.contests_1811 OWNER TO postgres;
+
+--
 -- Name: country_1501; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -954,6 +968,18 @@ CREATE TABLE public.friendship_1264 (
 ALTER TABLE public.friendship_1264 OWNER TO postgres;
 
 --
+-- Name: friendship_1892; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.friendship_1892 (
+    user1_id integer,
+    user2_id integer
+);
+
+
+ALTER TABLE public.friendship_1892 OWNER TO postgres;
+
+--
 -- Name: groups; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1041,6 +1067,18 @@ CREATE TABLE public.likes_1264 (
 
 
 ALTER TABLE public.likes_1264 OWNER TO postgres;
+
+--
+-- Name: likes_1892; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.likes_1892 (
+    user_id integer,
+    page_id integer
+);
+
+
+ALTER TABLE public.likes_1892 OWNER TO postgres;
 
 --
 -- Name: log_info_1747; Type: TABLE; Schema: public; Owner: postgres
@@ -2058,6 +2096,19 @@ CREATE TABLE public.transactions_1555 (
 ALTER TABLE public.transactions_1555 OWNER TO postgres;
 
 --
+-- Name: transactions_1831; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.transactions_1831 (
+    transactions_id integer,
+    day timestamp without time zone,
+    amount integer
+);
+
+
+ALTER TABLE public.transactions_1831 OWNER TO postgres;
+
+--
 -- Name: tree_608; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -2174,6 +2225,19 @@ CREATE TABLE public.users_1555 (
 
 
 ALTER TABLE public.users_1555 OWNER TO postgres;
+
+--
+-- Name: users_1811; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.users_1811 (
+    user_id integer,
+    mail character varying,
+    name character varying
+);
+
+
+ALTER TABLE public.users_1811 OWNER TO postgres;
 
 --
 -- Name: users_262; Type: TABLE; Schema: public; Owner: postgres
@@ -2701,6 +2765,21 @@ COPY public.contacts_1364 (user_id, contact_name, contact_email) FROM stdin;
 2	Omar	omar@leetcode.com
 2	Meir	meir@leetcode.com
 6	Alice	alice@leetcode.com
+\.
+
+
+--
+-- Data for Name: contests_1811; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.contests_1811 (contest_id, gold_medal, silver_medal, bronz_medal) FROM stdin;
+190	1	5	2
+191	2	3	5
+192	5	2	3
+193	1	3	5
+194	4	5	2
+195	4	2	1
+196	1	5	2
 \.
 
 
@@ -3297,6 +3376,21 @@ COPY public.friendship_1264 (user_id1, user_id2) FROM stdin;
 
 
 --
+-- Data for Name: friendship_1892; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.friendship_1892 (user1_id, user2_id) FROM stdin;
+1	2
+1	3
+1	4
+2	3
+2	4
+2	5
+6	1
+\.
+
+
+--
 -- Data for Name: groups; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3382,6 +3476,23 @@ COPY public.items_1479 (item_id, item_name, item_category) FROM stdin;
 --
 
 COPY public.likes_1264 (user_id, page_id) FROM stdin;
+1	88
+2	23
+3	24
+4	56
+5	11
+6	33
+2	77
+3	77
+6	88
+\.
+
+
+--
+-- Data for Name: likes_1892; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.likes_1892 (user_id, page_id) FROM stdin;
 1	88
 2	23
 3	24
@@ -5395,6 +5506,19 @@ COPY public.transactions_1555 (trans_id, paid_by, paid_to, amount, transacted_on
 
 
 --
+-- Data for Name: transactions_1831; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.transactions_1831 (transactions_id, day, amount) FROM stdin;
+8	2021-04-03 15:57:28	57
+9	2021-04-28 08:47:25	21
+1	2021-04-29 13:28:30	58
+5	2021-04-28 16:39:59	40
+6	2021-04-29 23:39:28	58
+\.
+
+
+--
 -- Data for Name: tree_608; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5506,6 +5630,19 @@ COPY public.users_1555 (user_id, user_name, credit) FROM stdin;
 2	Jonathan	200
 3	Winston	10000
 4	Luis	800
+\.
+
+
+--
+-- Data for Name: users_1811; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users_1811 (user_id, mail, name) FROM stdin;
+1	sarah@leetcode.com	Sarah
+2	bob@leetcode.com	Bob
+3	alice@leetcode.com	Alice
+4	hercy@leetcode.com	Hercy
+5	quarz@leetcode.com	Quarz
 \.
 
 
