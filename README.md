@@ -1,14 +1,22 @@
-# leetcode-sql
+# leetcode-sql <br/>
 
-Repository Contains:
---------------------
-(1) 120+ Leetcode SQL Question Solutions
-(2) PostgreSQL Dump File (leetcodedb.sql)
+<b>Repository Contains :</b><br/>
 
+(1) 120+ Leetcode SQL Question Solutions<br/>
+(2) PostgreSQL Dump File (leetcodedb.sql)<br/>
 
-SQL Dump File of PostgreSQL will create all the required tables in your own PostgreSQL setup.
+<b>How to Import dump file?</b><br/>
 
-Note : 
-(1) Table Names are suffixed with question number.
-(2) Will add more solutions as i solve.
+(1) Create Database in PostgreSQL <br/>
+```
+CREATE DATABASE sample_db;
+```
+(2) Load dump into the newly created database
+```
+psql sample_db < leetcodedb.sql
+```
 
+<b>Note : </b><br/>
+
+(1) Table names are suffixed with question number.<br/>
+(2) New solutions will get added I solve them.<br/>
