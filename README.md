@@ -34,7 +34,7 @@ Servers -> Databases -> Create -> Database.. (Create Database dialog will get op
 ```
 Right Click on newly created Database & select Restore option from menu (Restore dialog will get opened)
 ```
-Just Browse the dump file and keep other options as it is<br/>
+Just Browse the dump file and keep other options as it is.<br/>
 
 <b>Notes : </b><br/>
 
