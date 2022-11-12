@@ -2,7 +2,7 @@
 
 <b>Repository Contains :</b><br/>
 
-(1) 120+ Leetcode SQL Question Solutions<br/>
+(1) 130+ Leetcode SQL Question Solutions<br/>
 (2) PostgreSQL Dump File (leetcodedb.sql)<br/>
 <br/>
 <b>How to Import dump file using command line terminal?</b><br/>
