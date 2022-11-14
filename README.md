@@ -1,9 +1,14 @@
-# leetcode-sql <br/>
+# Leetcode SQL Questions & Solutions <br/>
 
 <b>Repository Contains :</b><br/>
 
 (1) 130+ Leetcode SQL Question Solutions<br/>
 (2) PostgreSQL Dump File (leetcodedb.sql)<br/>
+<br/>
+<b> Problem statements of all questions including leetcode premium questions :</b><br/>
+
+(1) https://leetcode.ca/ <br/>
+(2) https://lifewithdata.com/sql/<br/>
 <br/>
 <b>How to Import dump file using command line terminal?</b><br/>
 
