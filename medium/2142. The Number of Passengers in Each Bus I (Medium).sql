@@ -9,6 +9,7 @@ FROM running_total_passengers r1
 LEFT JOIN running_total_passengers r2 ON r1.bus_id=r2.bus_id+1
 ORDER BY r1.passengers,r1.bus_id;
 
+--(Here we have made an assumption that smaller bus_id arrived first which will not be the case always)
 -- Better Query
 
 WITH running_total_passengers AS (
