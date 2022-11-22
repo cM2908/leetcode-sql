@@ -1,7 +1,7 @@
 # Leetcode SQL Questions & Solutions <br/>
 #### Repository Contains :<br/>
 
-(1) 150+ Leetcode SQL Question Solutions<br/>
+(1) 160+ Leetcode SQL Question Solutions<br/>
 (2) PostgreSQL Dump File (leetcodedb.sql)<br/>
 
 #### Problem statements of all questions including leetcode premium questions :<br/>
