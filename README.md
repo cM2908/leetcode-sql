@@ -51,3 +51,6 @@ Just Browse the dump file and keep other options as it is.
 
 #### Checkout my another repository which cantains Miscellaneous SQL Questions & Solutions : <br/>
 https://github.com/cM2908/misc-sql
+
+#### Checkout my Blogs on interesting SQL topics : <br/>
+http://chintan-sql.blogspot.com
