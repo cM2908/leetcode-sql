@@ -1,7 +1,10 @@
 # Leetcode SQL Questions & Solutions <br/>
 #### Repository Contains :<br/>
 
-(1) 190+ Leetcode SQL Question Solutions<br/>
+(1) All (212) Leetcode SQL Question Solutions<br/>
+	- Easy Questions : 89<br/>
+	- Medium Questions : 91<br/>
+	- Hard Questions : 32<br/>
 (2) PostgreSQL Dump File (leetcodedb.sql)<br/>
 
 #### Problem statements of all questions including leetcode premium questions :<br/>
