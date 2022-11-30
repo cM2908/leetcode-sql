@@ -6,9 +6,7 @@ ON ((s1.id = s2.id-1 AND s1.id = s3.id-2) OR (s1.id = s2.id+1 AND s1.id = s3.id-
 WHERE s1.people >= 100 AND s2.people >= 100 AND s3.people>=100
 ORDER BY visit_date;
 
-
-(OR)
-
+------------------------------------------------------------------------------------------------------------------------------------
 
 WITH ranked AS(
 	SELECT *,
@@ -28,4 +26,22 @@ SELECT id,visit_date,people
 FROM ranked r
 LEFT JOIN consecutive c ON r.diff = c.diff
 WHERE c.count >=3
+ORDER BY visit_date;
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+WITH ranked AS (
+	SELECT *,
+		id-ROW_NUMBER() OVER (ORDER BY id) AS diff
+	FROM stadium_601
+	WHERE people >= 100
+),
+consecutives AS (
+	SELECT *,
+		COUNT(id) OVER (PARTITION BY diff) AS cnt
+	FROM ranked
+)
+SELECT id,visit_date,people
+FROM consecutives
+WHERE cnt >= 3
 ORDER BY visit_date;
