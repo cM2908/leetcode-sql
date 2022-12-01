@@ -1,0 +1,13 @@
+WITH RECURSIVE exploded_sales AS (
+	SELECT product_id,period_start,period_end,average_daily_sales
+	FROM sales_1384
+	UNION
+	SELECT product_id,period_start+1 AS period_start,period_end,average_daily_sales 
+	FROM exploded_sales
+	WHERE period_start < period_end
+)
+SELECT es.product_id,p.product_name,EXTRACT(YEAR FROM period_start) AS report_year,SUM(average_daily_sales) 
+FROM exploded_sales es
+INNER JOIN product_1384 p ON es.product_id=p.product_id
+GROUP BY es.product_id,p.product_name,EXTRACT(YEAR FROM period_start)
+ORDER BY es.product_id,report_year;
