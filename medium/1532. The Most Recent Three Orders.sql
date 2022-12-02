@@ -11,11 +11,11 @@ ORDER BY c.name,c.customer_id,r.order_date DESC;
 
 ---------------Without Window function---------------
 
-SELECT o1.customer_id,o1.order_date,COUNT(*)
+SELECT o1.customer_id,o1.order_date,COUNT(o2.order_date)
 FROM orders_1532 o1
 INNER JOIN orders_1532 o2 ON o1.customer_id=o2.customer_id AND o1.order_date<=o2.order_date
 GROUP BY o1.customer_id,o1.order_date
-HAVING COUNT(*)<=3
+HAVING COUNT(o2.order_date)<=3
 ORDER BY 1,2 DESC;
 
 -- Main logic is over now we only need to apply 2 joins to bring other columns.
