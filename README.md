@@ -1,4 +1,7 @@
 # Leetcode SQL Questions & Solutions <br/>
+
+![alt text](https://github.com/cM2908/leetcode-sql/blob/main/LeetCode.png)
+
 #### Repository Contains :<br/>
 
 (1) All Leetcode SQL Question Solutions <br/>
