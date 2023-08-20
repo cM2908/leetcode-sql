@@ -7,12 +7,13 @@ WITH cte AS(
 ),
 cte2 AS(	
 	SELECT number,frequency,
-		CASE WHEN (LAG(e::INT,1,1) OVER w)=1 THEN (LAG(e::INT,1,1) OVER w) ELSE (LAG(e::INT,1,1) OVER w )+1 END AS s,e,t
+		CASE WHEN (LAG(e::INT,1) OVER w) IS NULL THEN 1 ELSE (LAG(e::INT,1) OVER w)+1 END AS s,
+		e,t
 	FROM cte
 	WINDOW w AS (ORDER BY number)
 )
 
-SELECT ROUND(AVG(number),2)
+SELECT ROUND(AVG(number),1)
 FROM cte2
 WHERE (t::NUMERIC/2 BETWEEN s AND e) OR (t::NUMERIC/2+1 BETWEEN s AND e);
 
