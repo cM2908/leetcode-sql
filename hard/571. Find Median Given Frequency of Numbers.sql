@@ -36,3 +36,28 @@ cte2 AS (
 SELECT ROUND(AVG(number),1) 
 FROM cte2
 WHERE a BETWEEN (SELECT CEIL(AVG(c)::NUMERIC/2) FROM cte2) AND (SELECT CEIL((AVG(c)+1::NUMERIC)/2) FROM cte2)
+
+--------------------------- OR ---------------------------
+
+WITH RECURSIVE cte AS (
+	SELECT number,frequency,1 AS cnt
+	FROM numbers_571
+	UNION ALL
+	SELECT number,frequency,cnt+1 AS cnt
+	FROM cte
+	WHERE cnt < frequency
+),
+cte2 AS (
+	SELECT number,
+		ROW_NUMBER() OVER (ORDER BY number) AS a
+	FROM cte
+),
+cte3 AS (
+	SELECT number,a,
+		ROW_NUMBER() OVER (ORDER BY a DESC) AS d
+	FROM cte2	
+)
+SELECT ROUND(AVG(number),1)
+FROM cte3
+WHERE ABS(a-d) = 0 OR ABS(a-d) = 1;
+
